@@ -3,17 +3,17 @@ on:
   push
 env:
   DAY_OF_WEEK: Monday
-  First_name: Yssa  ## Low    
+  First_name: Yssa  ## Low Priority    
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
     env:
       Greeting: Hello
-      First_name: Jay  ## Medium
+      First_name: Jay  ## Medium Priority
     steps:
       - name: "Say Hello Grace it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
-          First_Name: Grace  # High
+          First_Name: Grace  # High Priority
       - name: repo variables
         run: echo "Hi! The value of var1 is ${{ vars.var1 }} and today is ${{ vars.today }}. My secret key is ${{ secrets.password }}."
