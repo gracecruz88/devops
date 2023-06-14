@@ -15,3 +15,5 @@ jobs:
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
           First_Name: Grace
+      - name: repo variables
+        run: echo "Hi! The value of var1 is ${{ vars.var1 }} and today is ${{ vars.today }}"
