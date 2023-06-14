@@ -16,4 +16,4 @@ jobs:
         env:
           First_Name: Grace
       - name: repo variables
-        run: echo "Hi! The value of var1 is ${{ vars.var1 }} and today is ${{ vars.today }}. My secret variable is ${{ secrets.password }}."
+        run: echo "Hi! The value of var1 is ${{ vars.var1 }} and today is ${{ vars.today }}. My secret key is ${{ secrets.password }}."
