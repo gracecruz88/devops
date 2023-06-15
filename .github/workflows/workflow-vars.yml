@@ -1,19 +1,17 @@
-name: Greeting on variable day
+name: CI
 on:
-  push
-env:
-  DAY_OF_WEEK: Monday
-  First_name: Yssa  ## Low Priority    
+  push:
+    branches: [ "main" ]
 jobs:
-  greeting_job:
+  build:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
-      First_name: Jay  ## Medium Priority
+    environment: dev
     steps:
-      - name: "Say Hello Grace it's Monday"
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: Grace  # High Priority
-      - name: repo variables
-        run: echo "Hi! The value of var1 is ${{ vars.var1 }} and today is ${{ vars.today }}. My secretkey is ${{ secrets.password }}."
+      - name: Get the server name
+        run: echo "Servername ${{ vars.server }}"
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Get the server name
+        run: echo "Servername ${{ vars.server }}"
