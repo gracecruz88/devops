@@ -9,4 +9,5 @@ jobs:
     steps:
       - uses: rtCamp/action-slack-notify@v2
         env:
-           SLACK_WEBHOOK: ${{ secrets.slack_secret }}
+           SLACK_WEBHOOK: ${{ secrets.slack_secret }} 
+           
